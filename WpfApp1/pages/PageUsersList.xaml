@@ -1,0 +1,76 @@
+﻿<Page x:Class="WpfApp1.pages.PageUsersList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.pages"
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="PageUsersList" Height="387.894">
+    <Page.Resources>
+        <DataTemplate x:Key="DT1">
+            <GroupBox Header="Данные пользователя">
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Header="имя">
+                        <TextBlock Text="{Binding name}"/>
+                    </GroupBox>
+                    <GroupBox Header="дата рождения">
+                        <TextBlock Text="{Binding dr, StringFormat={}{0:dd.MM.yyyy}}"/>
+                    </GroupBox>
+                    <GroupBox Header="гендер">
+                        <TextBlock Text="{Binding genders.gender}"/>
+                    </GroupBox>
+                    <GroupBox Header="качества личности">
+                        <TextBlock Name="lbTraits" Loaded="lbTraits_Loaded" Uid="{Binding id}"/>
+                    </GroupBox>
+                    <StackPanel>
+                        <Button Margin="0,0,5,0" Content="Изменить" Name="btnChange" Click="btnChange_Click" Uid="{Binding id}" />
+                        <Button Margin="0,0,5,0" Content="Удалить" Name="btnDelete" Click="btnDelete_Click" Uid="{Binding id}" />
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="397"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <ComboBox Width="150" Height="40" SelectionChanged="ComboBox_Selected" Name="cbSort">
+                <ComboBoxItem Content="ОТ- ДО"/>
+                <ComboBoxItem Content="Имя"/>
+                <ComboBoxItem Content="Пол"/>
+                <ComboBoxItem Content="День рождение"/>
+            </ComboBox>
+            <GroupBox Header="от" Name="gbOT" Visibility="Collapsed">
+                <TextBox x:Name="tbOT"/>
+            </GroupBox>
+            <GroupBox Header="до" Name="gbDO" Visibility="Collapsed">
+                <TextBox x:Name="tbDO"/>
+            </GroupBox>
+            <GroupBox Header="Имя" Name="gbName" Visibility="Collapsed">
+                <TextBox x:Name="tbName"/>
+            </GroupBox>
+            <GroupBox Header="Пол" Name="gbGen" Visibility="Collapsed">
+                <ComboBox x:Name="tbGen">
+                    <ComboBoxItem Content="мальчик"/>
+                    <ComboBoxItem Content="девочка"/>
+                    <ComboBoxItem Content="другое"/>
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Header="День рождение" Name="gbBD" Visibility="Collapsed">
+                <DatePicker x:Name="tbBD"/>
+            </GroupBox>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnGO" Content="Вывести" Click="btnGO_Click" Width="50"/>
+            <Button Name="btnReset" Content="Сброс" Click="btnReset_Click" Width="50"/>
+            <Button Name="btnNewUser" Click="btnNewUser_Click" />
+            <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Width="50"/>
+        </StackPanel>
+        <ListBox Name="lbUsersList" ItemTemplate="{StaticResource DT1}" Grid.Row="1" Margin="0,0,0,59"/>
+    </Grid>
+</Page>
