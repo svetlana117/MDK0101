@@ -86,6 +86,9 @@
     <Compile Include="pages\PageUsersList.xaml.cs">
       <DependentUpon>PageUsersList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\Pdll.xaml.cs">
+      <DependentUpon>Pdll.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\reg.xaml.cs">
       <DependentUpon>reg.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\PageUsersList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\Pdll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLL\DLL.csproj">
+      <Project>{8933daf8-26c7-43ea-8826-64b29e50a471}</Project>
+      <Name>DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

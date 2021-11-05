@@ -1,0 +1,33 @@
+﻿<Page x:Class="WpfApp1.pages.Pdll"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Pdll">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="209*"/>
+            <RowDefinition Height="26*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Средний возраст пользователей">
+            <StackPanel>
+                <TextBlock x:Name="txtAge"/>
+                <Button x:Name="btnAge" Content="Посчитать" Click="btnAge_Click" Margin="10,0,710,0"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Поиск пользователей" Grid.Row="1" >
+            <StackPanel>
+                <TextBox x:Name="txtStr"/>
+                <Button x:Name="btnSerch" Content="Найти пользователя" Click="btnSerch_Click" Margin="0,0,674,0" />
+                <ListBox x:Name="listUser"/>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="2" Margin="0,0,760,0"/>
+
+    </Grid>
+</Page>

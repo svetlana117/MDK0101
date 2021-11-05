@@ -33,44 +33,68 @@
     </Page.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="507*"/>
+            <ColumnDefinition Width="293*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="397"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <ComboBox Width="150" Height="40" SelectionChanged="ComboBox_Selected" Name="cbSort">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <!--<ComboBox Width="150" Height="40" SelectionChanged="ComboBox_Selected" Name="cbSort">
                 <ComboBoxItem Content="ОТ- ДО"/>
                 <ComboBoxItem Content="Имя"/>
                 <ComboBoxItem Content="Пол"/>
                 <ComboBoxItem Content="День рождение"/>
-            </ComboBox>
-            <GroupBox Header="от" Name="gbOT" Visibility="Collapsed">
+            </ComboBox>-->
+            <GroupBox Header="от" Name="gbOT" Visibility="Visible">
                 <TextBox x:Name="tbOT"/>
             </GroupBox>
-            <GroupBox Header="до" Name="gbDO" Visibility="Collapsed">
+            <GroupBox Header="до" Name="gbDO" Visibility="Visible">
                 <TextBox x:Name="tbDO"/>
             </GroupBox>
-            <GroupBox Header="Имя" Name="gbName" Visibility="Collapsed">
+            <!--<GroupBox Header="Имя" Name="gbName" Visibility="Visible">
                 <TextBox x:Name="tbName"/>
+            </GroupBox>-->
+            <GroupBox Header="Пол" Name="gbGen" Visibility="Visible" Width="78">
+                <ComboBox x:Name = "cbGenderS" Margin="0,0,-2,0" />
             </GroupBox>
-            <GroupBox Header="Пол" Name="gbGen" Visibility="Collapsed">
-                <ComboBox x:Name="tbGen">
-                    <ComboBoxItem Content="мальчик"/>
-                    <ComboBoxItem Content="девочка"/>
-                    <ComboBoxItem Content="другое"/>
-                </ComboBox>
+            <GroupBox Header="День рождение" Name="gbBD" Visibility="Visible">
+                <DatePicker x:Name="tbBD" />
             </GroupBox>
-            <GroupBox Header="День рождение" Name="gbBD" Visibility="Collapsed">
-                <DatePicker x:Name="tbBD"/>
+            <GroupBox Header="Часть имени">
+                <TextBox x:Name="tbPartName" TextChanged="Filter"/>
             </GroupBox>
-
+            <StackPanel>
+                <GroupBox Header="Всего записей" RenderTransformOrigin="0.503,0.36">
+                    <TextBox x:Name="txtPageCount" TextChanged="txtPageCount_TextChanged" Margin="0,0,0,-3" Height="28"/>
+                </GroupBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
+                <TextBlock x:Name="txtPrev" Uid="prev" Text="Пред." MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txt1" Uid="1" Text=" 1 " MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txt2" Uid="2" Text=" 2 " MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txt3" Uid="3" Text=" 3 " MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txt4" Uid="4" Text=" 4 " MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txt5" Uid="5" Text=" 5 " MouseDown="GoPage_MouseDown"/>
+                <TextBlock x:Name="txtNext" Uid="next" Text="След." MouseDown="GoPage_MouseDown"/>
+            </StackPanel>
+            <TextBlock x:Name="txtCurentPage" Width="79" Margin="0,0,0,29"/>
+            <StackPanel Orientation="Vertical"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="btnGO" Content="Вывести" Click="btnGO_Click" Width="50"/>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+            <Button Name="btnGO" Content="Вывести" Click="Filter" Width="50"/>
             <Button Name="btnReset" Content="Сброс" Click="btnReset_Click" Width="50"/>
             <Button Name="btnNewUser" Click="btnNewUser_Click" />
             <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Width="50"/>
+            <Button Name="btnDLL" Content="dll" Click="btnDLL_Click" Width="50"/>
+
+
         </StackPanel>
-        <ListBox Name="lbUsersList" ItemTemplate="{StaticResource DT1}" Grid.Row="1" Margin="0,0,0,59"/>
+
+        <ListBox Name="lbUsersList" ItemTemplate="{StaticResource DT1}" Grid.Row="1" Margin="0,0,0,59" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

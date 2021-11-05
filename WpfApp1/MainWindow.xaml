@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPF1"
         mc:Ignorable="d"
         Title="MainWindow" Height="500.366" Width="819.766">
-    
+
     <Window.Resources>
         <!--<Style x:Key="pinkButton" TargetType="Button">
             <Setter Property="FontFamily" Value="Arial"></Setter>
@@ -37,9 +37,9 @@
             <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="209*"/>
-            <ColumnDefinition Width="492*"/>
-            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="282*"/>
+            <ColumnDefinition Width="16*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.ColumnSpan="3" >
             <Image Source="название\cropped-genshindb-logo.png" Grid.Column="0" Grid.Row="0" ></Image>
