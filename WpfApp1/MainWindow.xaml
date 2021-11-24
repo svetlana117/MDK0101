@@ -38,10 +38,10 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="282*"/>
-            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="298*"/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.ColumnSpan="3" >
+        <DockPanel Grid.ColumnSpan="2" >
             <Image Source="название\cropped-genshindb-logo.png" Grid.Column="0" Grid.Row="0" ></Image>
             <TextBlock Text="M O P A !" DockPanel.Dock="Top" TextAlignment="Center"  Style="{StaticResource zagTxt}"></TextBlock>
         </DockPanel>

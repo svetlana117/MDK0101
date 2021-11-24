@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1.pages"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="PageUsersList" Height="387.894">
+      Title="PageUsersList" Height="469.634">
     <Page.Resources>
         <DataTemplate x:Key="DT1">
             <GroupBox Header="Данные пользователя">
@@ -32,17 +32,16 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid>
+    <Grid Margin="0,0,0,-163">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="507*"/>
-            <ColumnDefinition Width="293*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="363"/>
-            <RowDefinition Height="34"/>
+            <RowDefinition Height="583"/>
+            <RowDefinition Height="169"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
             <!--<ComboBox Width="150" Height="40" SelectionChanged="ComboBox_Selected" Name="cbSort">
                 <ComboBoxItem Content="ОТ- ДО"/>
                 <ComboBoxItem Content="Имя"/>
@@ -86,14 +85,19 @@
         </StackPanel>
 
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Width="204">
-            <Button Name="btnGO" Content="Вывести" Click="Filter" Width="50"/>
-            <Button Name="btnReset" Content="Сброс" Click="btnReset_Click" Width="50"/>
-            <Button Name="btnNewUser" Click="btnNewUser_Click" />
-            <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Width="50"/>
-            <Button Name="btnDLL" Content="dll" Click="btnDLL_Click" Width="50"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="204">
+            <StackPanel Orientation="Vertical">
+                <Button Name="btnGO" Content="Вывести" Click="Filter" Width="50" Height="25"/>
+                <Button Name="btnReset" Content="Сброс" Click="btnReset_Click" Width="50" Height="25"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Width="50" Height="25"/>
+                <Button x:Name="btnDLL" Content="dll" Click="btnDLL_Click" Width="50" Height="25"/>
+            </StackPanel>
+                <Button Name="btnNewUser" Click="btnNewUser_Click" />
+            
         </StackPanel>
 
-        <ListBox Name="lbUsersList" ItemTemplate="{StaticResource DT1}" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ListBox Name="lbUsersList" ItemTemplate="{StaticResource DT1}" Grid.Row="1"/>
     </Grid>
 </Page>
