@@ -1,0 +1,33 @@
+﻿<Page x:Class="WpfApp1.pages.Gallery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Gallery">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        
+        <Image x:Name="userImages" Grid.Row="0"></Image>
+        <StackPanel Grid.Row="1">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Предыдущее" Name="btnPrev"  Click="imgChange"></Button>
+                    <Button Content="Сделать фото аватаром" Name="btnChange" Click="btnChange_Click"></Button>
+                    <Button Content="Следующее" Name="btnNext" Click="imgChange"></Button>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center">
+                    <Button Content="Назад" Name="btnBack" Click="btnBack_Click" ></Button>
+                </StackPanel>
+            </StackPanel>
+            
+            
+        </StackPanel>
+    </Grid>
+</Page>

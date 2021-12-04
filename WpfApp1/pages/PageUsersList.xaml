@@ -26,7 +26,9 @@
                         <Button Margin="0,0,5,0" Content="Изменить" Name="btnChange" Click="btnChange_Click" Uid="{Binding id}" />
                         <Button Margin="0,0,5,0" Content="Удалить" Name="btnDelete" Click="btnDelete_Click" Uid="{Binding id}" />
                     </StackPanel>
-                    <Image x:Name="UserImage" Loaded="UserImage_Loaded" Uid="{Binding id}"/>
+                    <Button x:Name="BtmAddImage" Content="Загрузить/изменить изображение пользователя" Click="BtmAddImage_Click" Uid="{Binding id}"/>
+                    <Button x:Name="btnGoToGallery" Content="Открыть галлерею" Click="btnGoToGallery_Click" Uid="{Binding id}"/>
+                    <Image x:Name="UserImage" Loaded="UserImage_Loaded" Uid="{Binding id}" Width="300" Height="300"/>
                 </StackPanel>
             </GroupBox>
         </DataTemplate>
